@@ -1,0 +1,20 @@
+/setweather id
+
+/setseason id
+
+/tp|warp|goto id
+
+/setskin|skin|s|model id
+Выбранный скин сохраняется после смерти
+
+/kill
+
+/heal
+
+/spawn
+Отправиться на спаун, если персонаж не может умереть
+
+/me text
+Аналог RolePlay команды, для общения в н
+
+/id
