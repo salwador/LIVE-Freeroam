@@ -40,3 +40,13 @@ const spawnPlayerVehicle = function (player, command, id) {
 
 commandHandlers.add(`veh`, spawnPlayerVehicle);
 commandHandlers.add(`vehicle`, spawnPlayerVehicle);
+
+const removePlayerVehicleOnQuit = function(player) {
+    const playerVehicle = player.getData(`myVehicle`);
+
+    if (playerVehicle)
+        playerVehicle.destroy();
+
+};
+
+eventHandlers.add("onPlayerDisconnect", removePlayerVehicleOnQuit);
