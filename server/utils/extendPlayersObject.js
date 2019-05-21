@@ -1,12 +1,8 @@
 bullymp.players.sendMessage = function (color, message, ignore = []) {
-	if ((typeof color != `object`) && (typeof message != `string`) && (typeof ignore != `array`))
+	if ((typeof color != `object`) && (typeof message != `string`) && (typeof ignore != `object`))
 		return false;
 
-	const ignoreMessagePlayers = {};
-
-	for (let player of ignore) {
-		ignoreMessagePlayers[player] = true;
-	};
+	const ignoreMessagePlayers = new Set(ignore);
 
 	for (let i = 0; i < bullymp.players.length; i++) {
 		const player = bullymp.players[i];
@@ -14,7 +10,7 @@ bullymp.players.sendMessage = function (color, message, ignore = []) {
 		if (!player)
 			continue;
 
-		if (!ignoreMessagePlayers[player])
+		if (!ignoreMessagePlayers.has(player))
 			player.sendMessage(color, message);
 	};
 

@@ -6,12 +6,12 @@ const spawnPlayerVehicle = function (player, command, id) {
 
     id = parseInt(id);
 
-    if (typeof id !== `number` || isNaN(id)) {
+    if ((typeof id !== `number`) || isNaN(id)) {
         player.sendMessage(live.colors.red, `* Command help: id vehicle should be a number.`);
         return false;
     };
 
-    if (id < 272 || id > 298) {
+    if ((id < 272) || (id > 298)) {
         player.sendMessage(live.colors.red, `* Command help: id vehicle can be only ${live.colors.orange.toChatHex()}[272-298].`);
         return false;
     };
@@ -41,12 +41,11 @@ const spawnPlayerVehicle = function (player, command, id) {
 commandHandlers.add(`veh`, spawnPlayerVehicle);
 commandHandlers.add(`vehicle`, spawnPlayerVehicle);
 
-const removePlayerVehicleOnQuit = function(player) {
+const removePlayerVehicleOnQuit = function (player) {
     const playerVehicle = player.getData(`myVehicle`);
 
     if (playerVehicle)
         playerVehicle.destroy();
-
 };
 
 eventHandlers.add("onPlayerDisconnect", removePlayerVehicleOnQuit);

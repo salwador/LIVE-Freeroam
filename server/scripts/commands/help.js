@@ -40,7 +40,7 @@ const printPlayerHelpText = function (player, command, id) {
         };
     };
 
-    player.sendMessage(colors.white, `================`);
+    player.sendMessage(live.colors.white, `================`);
 
     const helpTextsList = helpTexts[id - 1];
 
@@ -49,7 +49,7 @@ const printPlayerHelpText = function (player, command, id) {
             player.sendMessage(live.colors.orange, message);
         };
 
-        player.sendMessage(live.colors.orange, `/${command} [1-${helpTexts.length}] ${colors.white.toChatHex()}- Help list`);
+        player.sendMessage(live.colors.orange, `/${command} [1-${helpTexts.length}] ${live.colors.white.toChatHex()}- Help list`);
     } else {
         player.sendMessage(live.colors.red, `* Command help: ${live.colors.orange.toChatHex()}/${command} [1-${helpTexts.length}]`);
     };
