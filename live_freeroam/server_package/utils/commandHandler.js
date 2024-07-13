@@ -124,12 +124,12 @@ const playerCommandHandle = function (player, commandText) {
     if (commandText[0] != `/`)
         return false;
 
-    for (let char of commandText) {
-        if (char.charCodeAt() == 65533) {
-            player.sendMessage(live.colors.red, `* Bully Multiplayer supports ${live.colors.orange.toChatHex()}only cyrillic ${live.colors.red.toChatHex()}chars`);
-            return false;
-        };
-    };
+    // for (let char of commandText) {
+    //     if (char.charCodeAt() == 65533) {
+    //         player.sendMessage(live.colors.red, `* Bully Multiplayer supports ${live.colors.orange.toChatHex()}only cyrillic ${live.colors.red.toChatHex()}chars`);
+    //         return false;
+    //     };
+    // };
 
     // Creating array for .apply
     const commandArray = commandText.substr(1).split(` `);
@@ -144,4 +144,4 @@ const playerCommandHandle = function (player, commandText) {
 };
 
 // Add event for upper method
-eventHandlers.add(`onPlayerCommandText`, playerCommandHandle);
+bullymp.events.add(`playerCommandText`, playerCommandHandle);

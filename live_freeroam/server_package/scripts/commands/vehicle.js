@@ -22,16 +22,19 @@ const spawnPlayerVehicle = function (player, command, id) {
     };
 
     const spawnPosition = player.position;
-    const spawnRotation = new Vector3(0, 0, player.heading);
+    const spawnRotation = player.heading;
 
-    const offsetRot = spawnRotation.z * (Math.PI / 180);
+    const offsetRot = spawnRotation * (Math.PI / 180);
     spawnPosition.x = spawnPosition.x + 2 * Math.cos(offsetRot);
     spawnPosition.y = spawnPosition.y + 2 * Math.sin(offsetRot);
+    spawnPosition.z = spawnPosition.z + 1;
 
     const currentPlayerVehicle = player.getData(`myVehicle`);
 
-    if (currentPlayerVehicle)
+    if (currentPlayerVehicle) {
+        player.removeFromVehicle();
         currentPlayerVehicle.destroy();
+    };
 
     const createdVehicle = new Vehicle(id, spawnPosition, spawnRotation, 0, 0);
 
@@ -48,4 +51,4 @@ const removePlayerVehicleOnQuit = function (player) {
         playerVehicle.destroy();
 };
 
-eventHandlers.add("onPlayerDisconnect", removePlayerVehicleOnQuit);
+bullymp.events.add("playerQuit", removePlayerVehicleOnQuit);

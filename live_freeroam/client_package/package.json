@@ -1,0 +1,9 @@
+{
+    "name": "live_freeroam",
+    "version": "1.0.0",
+    "description": "Bully Multiplayer - Freeroam Gamemode (Client-Side Package)",
+    "main": "main.js",
+    "author": "SalwadoR",
+    "bullymp_dependencies": []
+  }
+  

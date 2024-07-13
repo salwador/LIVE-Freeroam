@@ -116,4 +116,4 @@ const removePlayerFromAllColshapes = function (player) {
 };
 
 // Add event for upper method
-eventHandlers.add("onPlayerDisconnect", removePlayerFromAllColshapes);
+bullymp.events.add("playerQuit", removePlayerFromAllColshapes);

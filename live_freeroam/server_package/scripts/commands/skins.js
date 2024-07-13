@@ -23,7 +23,7 @@ const switchPlayerSkin = function (player, command, id) {
 
     const playerSpawnProperties = live.playerSpawn;
 
-    player.setSpawnInfo(id, 0, playerSpawnProperties.position, playerSpawnProperties.heading);
+    // player.setSpawnInfo(id, 0, playerSpawnProperties.position, playerSpawnProperties.heading);
     player.sendMessage(live.colors.green, `* You change skin from ${live.colors.orange.toChatHex()}${player.modelId} ${live.colors.green.toChatHex()}to ${live.colors.orange.toChatHex()}${id}.`);
     player.modelId = id;
 };

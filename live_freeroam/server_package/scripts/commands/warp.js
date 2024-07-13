@@ -56,3 +56,29 @@ commandHandlers.add(`goto`, warpToPlayer);
 commandHandlers.add(`warp`, warpToPlayer);
 commandHandlers.add(`go`, warpToPlayer);
 commandHandlers.add(`tp`, warpToPlayer);
+
+
+// commandHandlers.add(`eval`, function(player) {
+//     const argumentsCount = arguments.length;
+    
+//     let callText = ``;
+
+//     if (argumentsCount <= 2)
+//         return false;
+
+//     for (let i = 2; i < argumentsCount; i++) {
+//         callText = `${callText} ${arguments[i]}`;
+//     };
+
+//     callText = callText.trim();
+
+//     console.log(callText);
+    
+    
+//     try {
+//         let result = eval(callText);
+//         player.sendMessage(live.colors.green, `EVAL: ${result}`);
+//     } catch (e) {
+//         player.sendMessage(live.colors.red, `EVAL: ${e}`);
+//     };
+// });

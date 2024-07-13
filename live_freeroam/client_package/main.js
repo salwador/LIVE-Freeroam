@@ -1,0 +1,1 @@
+bullymp.camera.fade(1, false);

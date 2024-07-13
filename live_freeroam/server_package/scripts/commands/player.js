@@ -12,7 +12,9 @@ const respawnPlayer = function (player) {
         return false;
     };
 
-    player.spawn();
+    const playerSpawnProperties = live.playerSpawn;
+
+    player.spawn(player.modelId, 0, playerSpawnProperties.position, playerSpawnProperties.heading);
 };
 
 commandHandlers.add(`spawn`, respawnPlayer);

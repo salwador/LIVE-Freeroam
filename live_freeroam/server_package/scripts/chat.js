@@ -26,7 +26,7 @@ const printLocalChatMessage = function (player, text) {
     return false;
 };
 
-eventHandlers.add("onPlayerText", printLocalChatMessage);
+bullymp.events.add("playerText", printLocalChatMessage);
 
 const printGlobalChatMessage = function (player, command) {
     let fullText = ``;

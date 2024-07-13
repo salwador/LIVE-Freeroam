@@ -11,7 +11,7 @@ bullymp.players.sendMessage = function (color, message, ignore = []) {
 			continue;
 
 		if (!ignoreMessagePlayers.has(player))
-			player.sendMessage(color, message);
+			chat.send(player, color, message);
 	};
 
 	return true;

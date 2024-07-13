@@ -6,7 +6,7 @@ const printMessagePlayerJoin = function (player) {
     bullymp.players.sendMessage(live.colors.green, `* ${player.color.toChatHex()}${playerName}(${player.id}) ${live.colors.green.toChatHex()}has joined to server.`, [player]);
 };
 
-eventHandlers.add(`onPlayerConnect`, printMessagePlayerJoin);
+bullymp.events.add(`playerJoin`, printMessagePlayerJoin);
 
 const printMessagePlayerQuit = function (player) {
     bullymp.print(`[QUIT] ${player.name}(${player.id}) leave from server.`);
@@ -16,4 +16,4 @@ const printMessagePlayerQuit = function (player) {
     bullymp.players.sendMessage(live.colors.red, `* ${player.color.toChatHex()}${playerName}(${player.id}) ${live.colors.red.toChatHex()}leave from server.`);
 };
 
-eventHandlers.add(`onPlayerDisconnect`, printMessagePlayerQuit);
+bullymp.events.add(`playerQuit`, printMessagePlayerQuit);

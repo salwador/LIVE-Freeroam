@@ -1,0 +1,11 @@
+{
+	"name": "live_freeroam",
+	"version": "1.0.0",
+	"description": "Bully Multiplayer - Freeroam Gamemode",
+	"main": "main.js",
+	"author": "SalwadoR",
+	"license": "ISC",
+	"bullymp_dependencies": [
+		"chat"
+	]
+}

@@ -1,10 +1,11 @@
 const outputPlayerPosition = function (player) {
     const pos = player.position;
     const areaId = player.areaId;
+    const heading = player.heading;
 
     player.sendMessage(live.colors.green, `* Your position was saved into server log file.`);
 
-    bullymp.print(`${player.name}(${player.id}) position is {x: ${pos.x}, y: ${pos.y}, z: ${pos.z}, area: ${areaId}}`);
+    bullymp.print(`${player.name}(${player.id}) position is {x: ${pos.x}, y: ${pos.y}, z: ${pos.z}, area: ${areaId}, heading ${heading}}`);
 };
 
 commandHandlers.add(`pos`, outputPlayerPosition);

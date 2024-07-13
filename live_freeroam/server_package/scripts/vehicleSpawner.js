@@ -7,14 +7,13 @@ const createVehicles = function () {
     for (let { id, pos, heading } of live.vehiclesSpawnPositions) {
         const vehiclePosition = new Vector3(pos.x, pos.y, pos.z),
             color1 = Math.round(3 * Math.random()),
-            color2 = Math.round(3 * Math.random()),
-            rotation = new Vector3(0, 0, heading);
+            color2 = Math.round(3 * Math.random());
 
-        const vehicle = new Vehicle(id, vehiclePosition, rotation, color1, color2);
+        const vehicle = new Vehicle(id, vehiclePosition, heading, color1, color2);
 
         vehicle.setData(`internalVehicle`, true);
         vehicle.setData(`lastSeat`, currentUptime);
-        vehicle.setData(`respawnInfo`, { vehiclePosition, rotation });
+        vehicle.setData(`respawnInfo`, { vehiclePosition, heading });
 
         loadedVehiclesBySpawner.push(vehicle);
     };
@@ -32,8 +31,8 @@ const refreshVehicleLastUseTime = function (player, vehicle) {
         vehicle.setData(`isUsed`, true);
 };
 
-eventHandlers.add("onPlayerEnterVehicle", refreshVehicleLastUseTime);
-eventHandlers.add("onPlayerExitVehicle", refreshVehicleLastUseTime);
+bullymp.events.add("playerEnterVehicle", refreshVehicleLastUseTime);
+bullymp.events.add("playerExitVehicle", refreshVehicleLastUseTime);
 
 ////////////////////////////////
 
@@ -41,14 +40,14 @@ const resetVehiclesTimer = function () {
     const currentUptime = bullymp.uptime;
 
     for (let vehicle of loadedVehiclesBySpawner) {
-        if (!vehicle.occupied && vehicle.getData(`isUsed`)) {
+        if (!vehicle.driver && vehicle.getData(`isUsed`)) {
             if (vehicle.getData(`lastSeat`) < currentUptime) {
                 vehicle.setData(`isUsed`, false);
 
                 const respawnInfo = vehicle.getData(`respawnInfo`);
 
                 vehicle.position = respawnInfo.vehiclePosition;
-                vehicle.rotation = respawnInfo.rotation;
+                vehicle.rotation = Vector3(0, 0, respawnInfo.heading);
             };
         };
     };

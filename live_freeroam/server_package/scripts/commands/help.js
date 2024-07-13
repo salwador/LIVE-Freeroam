@@ -5,7 +5,6 @@ const helpTexts = [
         `/kill ${live.colors.white.toChatHex()}- Suicide;`,
         `/spawn ${live.colors.white.toChatHex()}- Respawn;`,
         `/me [text] ${live.colors.white.toChatHex()}- Roleplay actions;`,
-        `/pm|msg|message [id] [message] ${live.colors.white.toChatHex()}- Private message;`,
         `/goto|go|warp|tp [id] ${live.colors.white.toChatHex()}- Teleport to player;`,
     ],
     [
@@ -15,16 +14,19 @@ const helpTexts = [
         `/setskin|skin|s|model [id] ${live.colors.white.toChatHex()}- Change player skin;`,
         `/weapon|wp|give|gw [id] ${live.colors.white.toChatHex()}- Spawn weapon;`,
         `/weaponlist ${live.colors.white.toChatHex()}- Show all available weapons;`,
-        `/skateboard|sk8board|skate ${live.colors.white.toChatHex()}- Take skateboard;`,
     ],
     [
+        `/vehicle|veh ${live.colors.white.toChatHex()}- Spawn vehicle;`,
+        `/skateboard|sk8board|skate ${live.colors.white.toChatHex()}- Take skateboard;`,
+        `/pm|msg|message [id] [message] ${live.colors.white.toChatHex()}- Private message;`,
         `/g [message]${live.colors.white.toChatHex()}- Send message to global chat;`,
         `/lock ${live.colors.white.toChatHex()}- Allow/Block incoming teleports;`,
         `/count ${live.colors.white.toChatHex()}- Start count for races;`,
+    ],
+    [
         `/online ${live.colors.white.toChatHex()}- Output current server online;`,
         `/infammo ${live.colors.white.toChatHex()}- Enable/Disable infinity ammo;`,
-        `/vehicle|veh ${live.colors.white.toChatHex()}- Spawn vehicle;`,
-        `/tp ${live.colors.white.toChatHex()}- Show all locations list;`
+        // `/tp ${live.colors.white.toChatHex()}- Show all locations list;`,
     ]
 ];
 

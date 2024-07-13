@@ -1,1 +1,0 @@
-bullymp.server.gameModeText = `LIVE Freeroam`;
